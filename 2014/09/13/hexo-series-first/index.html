@@ -1,0 +1,365 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="QAEHufVhIG" />
+  
+  <title>hexo使用指南（一） | Karl&#39;s Blog</title>
+  <meta name="author" content="Karl Yang">
+  
+  <meta name="description" content="Technology is changing the world!">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="hexo使用指南（一）"/>
+  <meta property="og:site_name" content="Karl&#39;s Blog"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Karl&#39;s Blog" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  
+  <!--[if lt IE 9]><script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv-printshiv.js"></script><![endif]-->
+  
+  
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">Karl&#39;s Blog</a></h1>
+  <h2><a href="/">Technology is changing the world!</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">主页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2014-09-13T04:36:55.000Z"><a href="/2014/09/13/hexo-series-first/">9月 13 2014</a></time>
+      
+      
+  
+    <h1 class="title">hexo使用指南（一）</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <blockquote>
+<p><strong>hexo</strong> is a fast, simple and poweful blog framework.</p>
+</blockquote>
+<h2 id="简介">简介</h2>
+<p>它可以用来极快的生成有着自定义主题的静态文件，它支持解析<strong>Markdown</strong>等几种格式的文件。</p>
+<p>下面通过搭建一个简单、漂亮的个人博客并部署到<strong>github</strong>来介绍<a href="http://hexo.io/" target="_blank" rel="external"><strong>hexo</strong></a>(2.8.3)的使用。</p>
+<a id="more"></a>
+
+<h2 id="安装">安装</h2>
+<ol>
+<li>安装<a href="http://www.nodejs.org/" target="_blank" rel="external">Node.js</a></li>
+<li>安装<a href="http://www.git-scm.com/" target="_blank" rel="external">git</a></li>
+<li>使用npm全局安装hexo：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo</div></pre></td></tr></table></figure>
+
+<ol>
+<li>生成project并安装依赖，其中name是你自定义的project名字：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo init name</div><div class="line">$ <span class="built_in">cd</span> name</div><div class="line">$ npm install</div></pre></td></tr></table></figure>
+
+<h2 id="project目录结构介绍">project目录结构介绍</h2>
+<p>目录结构如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line"><span class="string">|- _config.yml</span></div><div class="line"><span class="string">|- package.json</span></div><div class="line"><span class="string">|- scaffolds</span></div><div class="line"><span class="string">|- source</span></div><div class="line"><span class="string">|- themes</span></div></pre></td></tr></table></figure>
+
+
+
+<h3 id="1-_配置文件_config-yml">1. 配置文件_config.yml</h3>
+<h4 id="1-1_Site">1.1 Site</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>配置</strong></th>
+<th style="text-align:left"><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>title</code></td>
+<td style="text-align:left">网站名称</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>subtitle</code></td>
+<td style="text-align:left">网站子名称</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>description</code></td>
+<td style="text-align:left">网站说明</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>author</code></td>
+<td style="text-align:left">作者</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>email</code></td>
+<td style="text-align:left">email地址</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>language</code></td>
+<td style="text-align:left">网站使用的语言，比如中文是<code>zh-CN</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="1-2_Deploy">1.2 Deploy</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>配置</strong></th>
+<th style="text-align:left"><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>type</code></td>
+<td style="text-align:left">部署类型，比如<code>github</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>repo</code></td>
+<td style="text-align:left">repository地址，repository名为<code>your_name.github.io</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>branch</code></td>
+<td style="text-align:left">branch名，默认为repository默认branch</td>
+</tr>
+</tbody>
+</table>
+<h4 id="1-3_其他">1.3 其他</h4>
+<p>还有URL、Directory、Writing、Category &amp; Tag、Archives、Server、Date / Time format、Pagination、Disqus、Extensions等配置信息，起始阶段暂时只需要自定义以上详细介绍的部分。</p>
+<h2 id="文章">文章</h2>
+<ol>
+<li>新建草稿，title为新文章的标题（将用来作为url的一部分，建议使用英文）：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new draft <span class="string">"title"</span></div></pre></td></tr></table></figure>
+
+<ol>
+<li><p>打开生成的文件，编辑（格式默认为<strong>Markdown</strong>）好后保存。</p>
+</li>
+<li><p>如果在编辑过程中希望可以在浏览器看到效果，可以使用以下命令：</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server --drafts</div></pre></td></tr></table></figure>
+
+<p>  或者修改<code>_config.yml</code>中的配置：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">render_drafts</span>: <span class="string">true</span></div></pre></td></tr></table></figure>
+
+<ol>
+<li>发布文章，title为文章文件名：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo publish <span class="string">"title"</span></div></pre></td></tr></table></figure>
+
+
+<ol>
+<li>也可以直接编辑直接发布的文章：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"title"</span></div></pre></td></tr></table></figure>
+
+
+<ol>
+<li>生成静态文件：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Option</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>-d</code>, <code>--deploy</code></td>
+<td style="text-align:left">在静态文件生成后自动部署</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>-w</code>, <code>--watch</code></td>
+<td style="text-align:left">查看修改的信息</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>在本机启动blog：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Option</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>-p</code>, <code>--port</code></td>
+<td style="text-align:left">指定启动时的端口号，默认为<code>_config.yml</code>指定的<code>port</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>-s</code>, <code>--static</code></td>
+<td style="text-align:left">只处理静态文件</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>-l</code>, <code>--log</code></td>
+<td style="text-align:left">启用logger</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>-d</code>, <code>--drafts</code></td>
+<td style="text-align:left">同时将草稿像已发布文章一样处理</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>部署到服务器：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+
+<ol>
+<li>projct会自动提交到github并自动部署，稍等几分钟，你就可以在github上看到你发布的blog了，地址是你的repository名。</li>
+</ol>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/hexo/">hexo</a>
+  </div>
+
+        
+  <div class="jiathis_style">
+    
+      <a class="jiathis_button_qzone"></a>
+    
+    
+      <a class="jiathis_button_tsina"></a>
+    
+    
+      <a class="jiathis_button_tqq"></a>
+    
+    
+      <a class="jiathis_button_weixin"></a>
+    
+    
+      <a class="jiathis_button_renren"></a>
+    
+    <a href="//www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+    <a class="jiathis_counter_style"></a>
+  </div>
+  <script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js?uid=1410094097941932" charset="utf-8"></script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">留言</h1>
+
+  
+      <div class="ds-thread" data-thread-key="2014/09/13/hexo-series-first/" data-title="hexo使用指南（一）" data-url="http://yangshuan.github.io/2014/09/13/hexo-series-first/"></div>
+
+<script>
+var duoshuoQuery = {short_name:"yangshuan"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+	 || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+
+      
+  
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <script>
+function baidu(form) {
+	form.wd.value = form.site.value + " " + form.q.value;
+	return true;
+}
+</script>
+<div class="search">
+  <form action="//baidu.com/s" method="get" accept-charset="utf-8" onsubmit="return baidu(this)">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="site" value="site:yangshuan.github.io">
+    <input type="hidden" name="wd">
+  </form>
+</div>
+
+  
+
+  
+<div class="widget tag">
+  <h3 class="title">标签</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/hexo/">hexo</a><small>2</small></li>
+  
+  </ul>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2014
+  <a href="mailto:yangshuan45@gmail.com">Karl Yang</a>
+  
+</div>
+<div class="clearfix"></div></footer>
+  
+<script src="http://cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>
